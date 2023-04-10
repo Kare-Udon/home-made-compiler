@@ -1,5 +1,8 @@
 #pragma once
+
 #include <string>
+#include "wordlist.h"
+
 using namespace std;
 
 
@@ -37,23 +40,19 @@ void SelectWord(string word,int num) {
 }
 
 //boolֵ����ȷ����Ҫcout����return true������return false
-bool IsNumber(string word) {
-	if (true) {
-		cout << endl;//�ǵ���� ��ʽ <1,digit> �� <1.2,float>
-		return true;
-	}
-	else return false;
-	
+bool IsNumber(const string &word) {
+    if (word.find('.') == string::npos) {
+        cout << "<" << word << ",digit>" << endl;
+    } else {
+        cout << "<" << word << ",float>" << endl;
+    }
+    return true;
 }
 
 
-bool Issingle_symbol(string word) {
-
-	if (true) {
-		cout << endl;//�ǵ���� 
-		return true;
-	}
-	else return false;
+bool IsSingle_symbol(const string& word) {
+    WordList wordList = *new WordList();
+    return wordList.single_symbol.find(word) == wordList.single_symbol.end();
 }
 
 
