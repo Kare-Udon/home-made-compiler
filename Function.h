@@ -25,42 +25,51 @@ bool IsDualSymbol(char first,char next) {
 }
 
 void SelectWord(string word,int num) {
-	if (IsNumber(word)) return;  //判断这个string是不是数字
-	if (Issingle_symbol(word)) return; //判断这个string是不是单符号
-	if (Isdual_symbol(word)) return;//判断这个string是不是多符号
-	if (Iskeywords(word)) return; //判断这个string是不是关键词
-	if (IsCorrectWord(word)) return; //判断这个string是不是正确的命名
 
-	//都不是就错的
+	if (IsNumber(word)) return;  //判断这个string是不是数字
+	if (IsSingle_symbol(word)) return;//判断这个string是不是单符号
+	
+	if (Iskeywords(word)) return;///判断这个string是不是关键词
+	if (IsCorrectWord(word)) return;//判断这个string是不是正确的命名
+
+
 
 	cout << "ERROR  " << num << endl;
 }
 
-//bool值是正确，需要cout，再return true，否则return false
-bool IsNumber(string word) {
-	if (true) {
-		cout << endl;//记得输出 格式 <1,digit> 或 <1.2,float>
-		return true;
-	}
-	else return false;
-	
+
+bool IsNumber(const string &word) {
+    if (word.find('.') == string::npos) {
+        cout << "<" << word << ",digit>" << endl;
+    } else {
+        cout << "<" << word << ",float>" << endl;
+    }
+    return true;
 }
 
 
-bool Issingle_symbol(string word) {
-
-	if (true) {
-		cout << endl;//记得输出 
+bool IsSingle_symbol(const string& word) {
+	//先判断是不是二元符号，比如++ -- 在判断是不是一元符号如+ (
+	if(Isdual_symbol(word)) {
 		return true;
 	}
-	else return false;
+
+	//缂轰釜 cout<<
+
+    WordList wordList = *new WordList();
+    return wordList.single_symbol.find(word) == wordList.single_symbol.end();
+
 }
 
 
-bool Isdual_symbol(string word) {
+bool Isdual_symbol(string word) {//先判断是不是二元符号，比如++ -- 
+
+
 
 	if (true) {
+
 		cout << endl;//记得输出 
+
 		return true;
 	}
 	else return false;
