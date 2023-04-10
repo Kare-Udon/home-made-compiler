@@ -17,10 +17,10 @@ int main() {
     while (fin >> buf)
     {
         line[num] = buf;
-      //  cout << line[num] << endl;//Ã¿Ò»´ÎµÄbufÊÇ¿Õ¸ñ»ò»Ø³µ¼ü£¨¼´°×É«×Ö·û£©·Ö¿ªµÄÔªËØ
+      //  cout << line[num] << endl;//æ¯ä¸€æ¬¡çš„bufæ˜¯ç©ºæ ¼æˆ–å›è½¦é”®ï¼ˆå³ç™½è‰²å­—ç¬¦ï¼‰åˆ†å¼€çš„å…ƒç´ 
         num++;
     }
-    //ÉÏÊö²Ù×÷»ñµÃÎÄ¼şÖĞ£¬Ã¿´Î¿Õ¸ñÖ®¼äµÄÔªËØ
+    //ä¸Šè¿°æ“ä½œè·å¾—æ–‡ä»¶ä¸­ï¼Œæ¯æ¬¡ç©ºæ ¼ä¹‹é—´çš„å…ƒç´ 
     
     list <string> line2;
     for (int j = 0; j <= num; j++)
@@ -29,14 +29,14 @@ int main() {
         int i = 0;
         while (i < length)
         {
-            if (IsNum(line[j][i])) { //ÅĞ¶ÏÊÇ²»ÊÇÊı×Ö ±ÈÈç 12 1 1234
+            if (IsNum(line[j][i])) { //åˆ¤æ–­æ˜¯ä¸æ˜¯æ•°å­— æ¯”å¦‚ 12 1 1234
                 string s;
                 int same_i = i;
                 while (IsNum(line[j][same_i])|| line[j][same_i]=='.')
                 {
                     s.push_back(line[j][same_i]);
                     same_i++;
-                    if (same_i >= length) //±ÜÃâ³¤¶È³¬¹ıÕûĞĞ³Ì¶È
+                    if (same_i >= length) //é¿å…é•¿åº¦è¶…è¿‡æ•´è¡Œç¨‹åº¦
                         break;
                 }
 
@@ -44,11 +44,11 @@ int main() {
                 i=same_i;
                 continue;
             }
-            else if (IsSingleSymbol(line[j][i])) {//ÅĞ¶ÏÊÇ²»ÊÇ·ûºÅ
+            else if (IsSingleSymbol(line[j][i])) {//åˆ¤æ–­æ˜¯ä¸æ˜¯ç¬¦å·
                 string s;
                 s.push_back(line[j][i]);
                 i++;
-                if (IsDualSymbol(line[j][i-1],line[j][i]))//ÅĞ¶ÏÊÇ²»ÊÇ¶şÔªÔËËã·ûÈç ++ -- ,Á½¸ö²ÎÊı£¬Ò»¸öÊÇµÚÒ»Î»²ÎÊı£¬Ò»¸öÊÇµÚ¶şÎ»²ÎÊı
+                if (IsDualSymbol(line[j][i-1],line[j][i]))//åˆ¤æ–­æ˜¯ä¸æ˜¯äºŒå…ƒè¿ç®—ç¬¦å¦‚ ++ -- ,ä¸¤ä¸ªå‚æ•°ï¼Œä¸€ä¸ªæ˜¯ç¬¬ä¸€ä½å‚æ•°ï¼Œä¸€ä¸ªæ˜¯ç¬¬äºŒä½å‚æ•°
                 {
                     s.push_back(line[j][i]);
                     i++;
@@ -57,10 +57,10 @@ int main() {
                 
                 continue;
             }
-            else { //Ê£Óà¾ÍÊÇ×Ö·û´® Ò»Ö±¶Á£¬¶Áµ½»»ĞĞ
+            else { //å‰©ä½™å°±æ˜¯å­—ç¬¦ä¸² ä¸€ç›´è¯»ï¼Œè¯»åˆ°æ¢è¡Œ
                 string s;
                 int same_i = i;
-                while (same_i<length &&  !IsSingleSymbol(line[j][same_i]))//ÅĞ¶ÏÏÂÒ»¸öÊÇ²»ÊÇ·ûºÅ
+                while (same_i<length && !IsSingleSymbol(line[j][same_i]))//åˆ¤æ–­ä¸‹ä¸€ä¸ªæ˜¯ä¸æ˜¯ç¬¦å·
                 {
                     s.push_back(line[j][same_i]);
                     same_i++;
