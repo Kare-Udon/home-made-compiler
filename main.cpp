@@ -57,7 +57,7 @@ int main() {
             else { //剩余就是字符串 一直读，读到换行
                 string s;
                 int same_i = i;
-                while (same_i<length|| IsSingleSymbol(line[j][same_i]))//判断下一个是不是符号
+                while (same_i<length && !IsSingleSymbol(line[j][same_i]))//判断下一个是不是符号
                 {
                     s.push_back(line[j][same_i]);
                     same_i++;
