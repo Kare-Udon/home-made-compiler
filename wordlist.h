@@ -5,7 +5,7 @@
 #ifndef HOME_MADE_COMPILER_WORDLIST_H
 #define HOME_MADE_COMPILER_WORDLIST_H
 
-#endif //HOME_MADE_COMPILER_WORDLIST_H
+//HOME_MADE_COMPILER_WORDLIST_H
 
 #include <set>
 #include <string>
@@ -39,7 +39,7 @@ public:
         };
 
         single_symbol = set<string>{
-                "+", "-", "*", "/", "[", "]", "(", ")", "{", "}", ",", "#", "~", ".", "^"
+              "=",  "+", "-", "*", "/", "[", "]", "(", ")", "{", "}", ",", "#", "~", ".", "^",";", "<", ">"
         };
 
         dual_symbol_head = set<string>{
@@ -47,7 +47,7 @@ public:
         };
 
         dual_symbol = set<string>{
-            "++", "+=", "--", "-=", "*=", "/=", "%=", "!=", ">=", "<=", "&&", "||", "<<", ">>", "&=", "|=", "^="
+            "==","++", "+=", "--", "-=", "*=", "/=", "%=", "!=", ">=", "<=", "&&", "||", "<<", ">>", "&=", "|=", "^="
         };
 
         keywords = set<string>{
@@ -59,5 +59,6 @@ public:
         type_identifier = set<string>{
                 "int", "char", "bool", "float", "double", "void"
         };
-    };
+    }
 };
+#endif 
