@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 using namespace std;
-
+#include "wordlist.h"
 
 bool IsNum(char s) {
 	if (isdigit(s) != 0)
@@ -26,11 +26,11 @@ bool IsDualSymbol(char first,char next) {
 
 void SelectWord(string word,int num) {
 
-	if (IsNumber(word)) return;  //ÅĞ¶ÏÕâ¸östringÊÇ²»ÊÇÊı×Ö
-	if (IsSingle_symbol(word)) return;//ÅĞ¶ÏÕâ¸östringÊÇ²»ÊÇµ¥·ûºÅ
+	if (IsNumber(word)) return;  //åˆ¤æ–­è¿™ä¸ªstringæ˜¯ä¸æ˜¯æ•°å­—
+	if (IsSingle_symbol(word)) return;//åˆ¤æ–­è¿™ä¸ªstringæ˜¯ä¸æ˜¯å•ç¬¦å·
 	
-	if (Iskeywords(word)) return;///ÅĞ¶ÏÕâ¸östringÊÇ²»ÊÇ¹Ø¼ü´Ê
-	if (IsCorrectWord(word)) return;//ÅĞ¶ÏÕâ¸östringÊÇ²»ÊÇÕıÈ·µÄÃüÃû
+	if (Iskeywords(word)) return;///åˆ¤æ–­è¿™ä¸ªstringæ˜¯ä¸æ˜¯å…³é”®è¯
+	if (IsCorrectWord(word)) return;//åˆ¤æ–­è¿™ä¸ªstringæ˜¯ä¸æ˜¯æ­£ç¡®çš„å‘½å
 
 
 
@@ -49,12 +49,12 @@ bool IsNumber(const string &word) {
 
 
 bool IsSingle_symbol(const string& word) {
-	//ÏÈÅĞ¶ÏÊÇ²»ÊÇ¶şÔª·ûºÅ£¬±ÈÈç++ -- ÔÚÅĞ¶ÏÊÇ²»ÊÇÒ»Ôª·ûºÅÈç+ (
+	//å…ˆåˆ¤æ–­æ˜¯ä¸æ˜¯äºŒå…ƒç¬¦å·ï¼Œæ¯”å¦‚++ -- åœ¨åˆ¤æ–­æ˜¯ä¸æ˜¯ä¸€å…ƒç¬¦å·å¦‚+ (
 	if(Isdual_symbol(word)) {
 		return true;
 	}
 
-	//ç¼ºä¸ª cout<<
+	//ç¼‚è½°é‡œ cout<<
 
     WordList wordList = *new WordList();
     return wordList.single_symbol.find(word) == wordList.single_symbol.end();
@@ -62,13 +62,13 @@ bool IsSingle_symbol(const string& word) {
 }
 
 
-bool Isdual_symbol(string word) {//ÏÈÅĞ¶ÏÊÇ²»ÊÇ¶şÔª·ûºÅ£¬±ÈÈç++ -- 
+bool Isdual_symbol(string word) {//å…ˆåˆ¤æ–­æ˜¯ä¸æ˜¯äºŒå…ƒç¬¦å·ï¼Œæ¯”å¦‚++ -- 
 
 
 
 	if (true) {
 
-		cout << endl;//¼ÇµÃÊä³ö 
+		cout << endl;//è®°å¾—è¾“å‡º 
 
 		return true;
 	}
@@ -79,9 +79,9 @@ bool Isdual_symbol(string word) {//ÏÈÅĞ¶ÏÊÇ²»ÊÇ¶şÔª·ûºÅ£¬±ÈÈç++ --
 bool Iskeywords(string word) {
 
 	if (true) {
-		if (Istype_identifier(word)) return true;  //ÅĞ¶ÏÊÇ²»ÊÇÀàĞÍ Èç int char Ö®ÀàµÄ
+		if (Istype_identifier(word)) return true;  //ï¿½Ğ¶ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ int char Ö®ï¿½ï¿½ï¿½
 		else {
-			cout << endl;//¼ÇµÃÊä³ö
+			cout << endl;//ï¿½Çµï¿½ï¿½ï¿½ï¿½
 		return true;
 		}
 		
@@ -94,7 +94,7 @@ bool Iskeywords(string word) {
 bool IsCorrectWord(string word) {
 
 	if (true) {
-		cout << endl;//¼ÇµÃÊä³ö 
+		cout << endl;//ï¿½Çµï¿½ï¿½ï¿½ï¿½ 
 		return true;
 	}
 	else return false;
@@ -103,7 +103,7 @@ bool IsCorrectWord(string word) {
 bool Istype_identifier(string word) {
 
 	if (true) {
-		cout << endl;//¼ÇµÃÊä³ö 
+		cout << endl;//ï¿½Çµï¿½ï¿½ï¿½ï¿½ 
 		return true;
 	}
 	else return false;
