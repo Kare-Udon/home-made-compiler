@@ -19,3 +19,50 @@ bool IsSingleSymbol(char s){
 		return true;
 	}
 }
+
+bool IsDualSymbol(char first, char next) {
+	if ((first=='+')&&((next=='=')||(next=='+')))
+	{
+		return true;
+	}
+	if ((first == '-') && ((next == '=') || (next == '-')))
+	{
+		return true;
+	}
+	if ((first == '*') && (next == '=') )
+	{
+		return true;
+	}
+	if ((first == '/') && (next == '='))
+	{
+		return true;
+	}
+	if ((first == '%') && (next == '='))
+	{
+		return true;
+	}
+	if ((first == '!') && (next == '='))
+	{
+		return true;
+	}
+	if ((first == '>') && (next == '=')||(next=='>'))
+	{
+		return true;
+	}
+	if ((first == '<') && (next == '=')||(next=='<'))
+	{
+		return true;
+	}
+	if ((first == '&') && (next == '=')||(next=='&'))
+	{
+		return true;
+	}
+	if ((first == '|') && (next == '=')||(next=='|'))
+	{
+		return true;
+	}
+	if ((first == '^') && (next == '='))
+	{
+		return true;
+	}
+}
