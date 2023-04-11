@@ -1,5 +1,8 @@
 #pragma once
+
 #include <string>
+#include "wordlist.h"
+
 using namespace std;
 #include "wordlist.h"
 
@@ -58,7 +61,6 @@ bool IsSingle_symbol(const string& word) {
 
     WordList wordList = *new WordList();
     return wordList.single_symbol.find(word) == wordList.single_symbol.end();
-
 }
 
 
