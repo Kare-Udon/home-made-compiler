@@ -29,7 +29,11 @@ int main() {
         int i = 0;
         while (i < length)
         {
-            if (IsNum(line[j][i]) || line[j][i] == '.') { //判断是不是数字 比如 12 1 1234
+            if (line[j][i] == '/' && line[j][i + 1] == '/') {
+                i = length;
+                continue;
+            }
+            else if (IsNum(line[j][i]) || line[j][i] == '.') { //判断是不是数字 比如 12 1 1234
                 string s;
                 int same_i = i;
                 while (IsNum(line[j][same_i])|| line[j][same_i]=='.'|| (isalpha(line[j][same_i]) != 0))
