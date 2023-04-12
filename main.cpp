@@ -7,9 +7,16 @@
 using namespace std;
 
 
-int main() {
+int main(int argc, char *argv[]) {
+    string inputFile;
+    if (argc < 1) {
+        cerr << "Usage: " << argv[0] << " inputFile" << endl;
+        return 1;
+    }
 
-    ifstream fin("in.txt");
+    inputFile = argv[1];
+
+    ifstream fin(inputFile);
     char buf[1024] = {0};
     int num = 0;
     string line[1024];
@@ -71,7 +78,7 @@ int main() {
 
 
     int iterator_num = 1;
-    for (auto & it : line2) {
+    for (auto &it: line2) {
         SelectWord(it, iterator_num);
         iterator_num++;
     }
