@@ -29,10 +29,14 @@ int main() {
         int i = 0;
         while (i < length)
         {
-            if (IsNum(line[j][i])) { //判断是不是数字 比如 12 1 1234
+            if (line[j][i] == '/' && line[j][i + 1] == '/') {
+                i = length;
+                continue;
+            }
+            else if (IsNum(line[j][i]) || line[j][i] == '.') { //判断是不是数字 比如 12 1 1234
                 string s;
                 int same_i = i;
-                while (IsNum(line[j][same_i])|| line[j][same_i]=='.')
+                while (IsNum(line[j][same_i])|| line[j][same_i]=='.'|| (isalpha(line[j][same_i]) != 0))
                 {
                     s.push_back(line[j][same_i]);
                     same_i++;
@@ -74,13 +78,12 @@ int main() {
 
     }
 
-    WordList WL =WordList();
 
     int iterator_num = 1;
     for (list<string>::iterator it=line2.begin();it!=line2.end();it++)
     {
-       // SelectWord(*it,iterator_num);
+        SelectWord(*it,iterator_num);
         iterator_num++;
-        cout << *it << endl;
+       // cout << *it << endl;
     }
 }
