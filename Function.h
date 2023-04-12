@@ -12,6 +12,7 @@ bool IsNum(char s) {
 }
 bool IsSingleSymbol(char s) {
 	if ((isdigit(s) != 0) || (isalpha(s) != 0) )
+
 	{
 		return false;
 	}
@@ -20,7 +21,6 @@ bool IsSingleSymbol(char s) {
 		return true;
 	}
 }
-
 
 bool IsDualSymbol(char first, char next) {
 	if ((first == '+') && ((next == '=') || (next == '+')))
@@ -75,7 +75,6 @@ bool IsDualSymbol(char first, char next) {
 }
 
 
-
 bool IsNumber(const string& word) {
 	if (word.find('.') != string::npos) {
 		if (word.find_last_of('.') != word.find_first_of('.')) return false;
@@ -103,6 +102,7 @@ bool IsNumber(const string& word) {
 	
 }
 
+
 bool Isdual_symbol(string word) {//先判断是不是二元符号，比如++ -- 
 
 	int len = word.length();
@@ -118,14 +118,12 @@ bool Isdual_symbol(string word) {//先判断是不是二元符号，比如++ --
 		{
 			return false;
 		}
-
 	}
 	else return false;
 }
 bool IsSingle_symbol(const string& word) {
 
 	if (Isdual_symbol(word))return true;
-
 	WordList wordList = *new WordList();
 
 	if (word.length() == 1) {
@@ -137,14 +135,11 @@ bool IsSingle_symbol(const string& word) {
 		else
 			return false;
 	}
-	
 	else
 		return false;
 }
 
-
-
-
+	if (len == 2) {
 
 bool Istype_identifier(string word) {
 
@@ -175,7 +170,6 @@ bool Iskeywords(string word) {
 	{
 		return false;
 	}
-	
 }
 
 
@@ -205,8 +199,6 @@ bool IsCorrectWord(string word) {
 	return all;
 }
 
-
-
 void SelectWord(string word, int num) {
 
 	if (IsNumber(word)) return;  //判断这个string是不是数字
@@ -218,5 +210,4 @@ void SelectWord(string word, int num) {
 	if (IsCorrectWord(word)) return;//判断这个string是不是正确的命名
 
 	cout << "<ERROR," << num <<"> "<< endl;
-	
 }
